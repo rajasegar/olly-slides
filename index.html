@@ -1,0 +1,161 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>Observability - O11y</title>
+
+    <link rel="stylesheet" href="dist/reset.css">
+    <link rel="stylesheet" href="dist/reveal.css">
+    <link rel="stylesheet" href="dist/theme/black.css">
+
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css">
+    <style>
+      .yellow {
+	  color: yellow;
+      }
+      .cyan {
+	  color: cyan;
+      }
+      .green {
+	  color: lightgreen;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+	<section><h1>Observability</h1></section>
+	<section>
+	  <section>
+	    <h2>What is Observability?</h2>
+	  </section>
+	  <section>
+	    <h3>Mathematical definition</h3>
+	    <p>Observability is defined as a measure of how well internal states of a system
+	      can be inferred from knowledge of its external outputs.
+	    </p>
+	  </section>
+	  <section>
+	    <h3>Applying Observability to Software Systems</h3>
+	    <ul>
+	      <li>Understand the inner workings of your application</li>
+	      <li>Understand any system state you application may have gotten itself into</li>
+	      <li>Understanding the things above, <span class="yellow">only</span> by observing that with external tools</li>
+	      <li>Understand that state, no matter how extreme or unusual</li>
+	    </ul>
+	  </section>
+	  <section>
+	    <h2>Litmus test</h2>
+	    <ul>
+	      <li>Can you continually answer open-ended questions about the inner workings of your software to explain any anomalous values?</li>
+	      <li>Can you understand what any particular user of your software may be experiencing?</li>
+	      <li>Can you determine the things above even if this anomaly has never happened before?</li>
+	      <li>Can you ask arbitrary questions about your system and find answers without needing to predict what those anomalies would be in advance?</li>
+	      <li>And can you do these things without having to ship any new code to handle or describe that state?</li>
+	    </ul>
+	  </section>
+	  <section>
+	    <p>Observability for software systems is a measure of how well you can understand and explain any state your system can get into,
+	    no matter how novel or bizarre.</p>
+	  </section>
+	  
+	  <section>
+	    <h3>Mischaracterizations of Observability for Software </h3>
+	  </section>
+	  <section>
+	    <h3>3 pillars</h3>
+	    <ol>
+	      <li>Metrics</li>
+	      <li>Logs</li>
+	      <li>Traces</li>
+	    </ol>
+	  </section>
+	  <section>
+	    <p>Observability is <span class="yellow">not achieved by gluing together disparate tools</span> with marketing.
+	      There is <span class="yellow">not one specific tool</span> you must adopt in order to get observability in your software systems.
+	    </p>
+	  </section>
+	  <section>
+	    <h3>Why Observability matters now?</h3>
+	  </section>
+	  <section>
+	    <h3>Why are metrics and monitoring not enough?</h3>
+	  </section>
+	  <section>
+	    <h3>Debugging with metrics vs observability</h3>
+	  </section>
+	  <section>
+	    <h3>Cardinality</h3>
+	    <p>Cardinality matters for observability, because high-cardinality information
+	      is the most useful data fro debugging or understanding a system.
+	      </p>
+	  </section>
+	  <section>
+	    <h3>Debugging with Observability</h3>
+	  </section>
+	  <section><p>
+	      Monitoring creates a <span class="yellow">fundamentally reactive approach</span> to system management.
+	  </p></section>
+	  <section>
+	    <p>Observability tools encourage developers to gather rich telemetry for every possible event that
+	      could occur, passing along the full context of any given request and storing it for possible use at some
+	    point down the line.</p>
+	  </section>
+	  
+	  <section>
+	    <h3>Observability is for Modern systems</h3>
+	  </section>
+	</section>
+	</section>
+	<section><h2>Observability vs Monitoring</h2></section>
+	<section><h2>Observability and DevOps, SRE & Cloud Native</h2></section>
+	<section><h2>Structured Events</h2></section>
+	<section><h2>Traces</h2></section>
+	<section><h4><span class="cyan">Observability </span>+ <span class="green">Monitoring </span>= <span class="yellow">Awesomeness</span></h4></section>
+	<section><h2>Observability Practices</h2></section>
+	<section><h2>Observability Driven Development (ODD)</h2></section>
+	<section>
+	  <section>
+	    
+	  <h2>SLOs - Service Level Objectives</h2>
+	  </section> 
+	  <section>
+	    <img alt="SRE book" src="/examples/assets/SRE-book.png"/>
+	  </section>
+	  
+	</section>
+	<section><h2>Sampling</h2></section>
+	<section>
+	  <section>
+	    <h2>Business case for Observability</h2>
+	  </section>
+	  <section>
+	    <p>The business case for observability is <span class="yellow">customer retention</span></p>
+	  </section>
+	</section>
+	<section>
+	  <h1>Observability Maturity Model</h1>
+	</section>
+      </div>
+    </div>
+
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+	  hash: true,
+
+	  // Learn about plugins: https://revealjs.com/plugins/
+	  plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+      });
+    </script>
+  </body>
+</html>
