@@ -22,6 +22,9 @@
       .green {
 	  color: lightgreen;
       }
+      .footnote {
+	  font-size: 0.25em;
+      }
     </style>
   </head>
   <body>
@@ -53,13 +56,18 @@
 	      <li>Can you continually answer open-ended questions about the inner workings of your software to explain any anomalous values?</li>
 	      <li>Can you understand what any particular user of your software may be experiencing?</li>
 	      <li>Can you determine the things above even if this anomaly has never happened before?</li>
+	    </ul>
+	  </section>
+	  <section>
+	    <h2>Litmus test - contd.</h2>
+	    <ul>
 	      <li>Can you ask arbitrary questions about your system and find answers without needing to predict what those anomalies would be in advance?</li>
 	      <li>And can you do these things without having to ship any new code to handle or describe that state?</li>
 	    </ul>
 	  </section>
 	  <section>
 	    <p>Observability for software systems is a measure of how well you can understand and explain any state your system can get into,
-	    no matter how novel or bizarre.</p>
+	      no matter how novel or bizarre.</p>
 	  </section>
 	  
 	  <section>
@@ -67,11 +75,8 @@
 	  </section>
 	  <section>
 	    <h3>3 pillars</h3>
-	    <ol>
-	      <li>Metrics</li>
-	      <li>Logs</li>
-	      <li>Traces</li>
-	    </ol>
+	    <div><img alt="Observability" height="500" src="/examples/assets/o11y-3-pillars.png"/></div>
+	    <div class="footnote">Image credit: <a href="https://www.novatec-gmbh.de/en/blog/5-reasons-why-opentelemetry-will-boost-observability-and-monitoring">5 Reasons why OpenTelemetry will boost Observability and Monitoring</a></div>
 	  </section>
 	  <section>
 	    <p>Observability is <span class="yellow">not achieved by gluing together disparate tools</span> with marketing.
@@ -91,7 +96,7 @@
 	    <h3>Cardinality</h3>
 	    <p>Cardinality matters for observability, because high-cardinality information
 	      is the most useful data fro debugging or understanding a system.
-	      </p>
+	    </p>
 	  </section>
 	  <section>
 	    <h3>Debugging with Observability</h3>
@@ -102,60 +107,177 @@
 	  <section>
 	    <p>Observability tools encourage developers to gather rich telemetry for every possible event that
 	      could occur, passing along the full context of any given request and storing it for possible use at some
-	    point down the line.</p>
+	      point down the line.</p>
 	  </section>
 	  
 	  <section>
 	    <h3>Observability is for Modern systems</h3>
 	  </section>
 	</section>
-	</section>
-	<section><h2>Observability vs Monitoring</h2></section>
-	<section><h2>Observability and DevOps, SRE & Cloud Native</h2></section>
-	<section><h2>Structured Events</h2></section>
-	<section><h2>Traces</h2></section>
-	<section><h4><span class="cyan">Observability </span>+ <span class="green">Monitoring </span>= <span class="yellow">Awesomeness</span></h4></section>
-	<section><h2>Observability Practices</h2></section>
-	<section><h2>Observability Driven Development (ODD)</h2></section>
-	<section>
-	  <section>
-	    
-	  <h2>SLOs - Service Level Objectives</h2>
-	  </section> 
-	  <section>
-	    <img alt="SRE book" src="/examples/assets/SRE-book.png"/>
-	  </section>
-	  
-	</section>
-	<section><h2>Sampling</h2></section>
-	<section>
-	  <section>
-	    <h2>Business case for Observability</h2>
-	  </section>
-	  <section>
-	    <p>The business case for observability is <span class="yellow">customer retention</span></p>
-	  </section>
-	</section>
-	<section>
-	  <h1>Observability Maturity Model</h1>
-	</section>
-      </div>
-    </div>
+</section>
+<section>
+  <section>
+    <h2>Observability vs Monitoring</h2>
+  </section> 
+  <section>
+    <p>Monitoring systems collect, aggregate and analyze metrics to sift through known patterns that indicate troubling trends are occurring.</p>
+  </section>
+  <section>
+    <p>Observability tools take a fundamentally different exploratory approach to finding problems.</p>
+  </section>
+  <section>
+    <p>Metrics are typically more useful in aggregate.</p>
+  </section>
+  
+  <section>
+    <p>Monitoring is a rudimentary system, yet so many of our troubleshooting capabilities rely on it.</p>
+  </section>
+  <section>
+    <p>Dashboards are a poor choice for discovering new problems with debugging.</p>
+  </section>
+  <section>
+    <p>Using metrics to surface new system insights is an inherently reactive approach.</p>
+  </section>
+  <section>
+    <img alt="Observability" src="/examples/assets/3-pillars.png"/>
+  </section>
+  <section>
+    <p>O11y tools pull the context from different sources of information like logs, metrics, events and traces into one central context where
+      investigators can easily switch between the necessary views to find definitive answers.</p>
+  </section>
+</section>
+<section><h2>Observability and DevOps, SRE & Cloud Native</h2></section>
+<section><h2>Structured Events</h2></section>
+<section><h2>Traces</h2></section>
+<section><h4><span class="cyan">Observability </span>+ <span class="green">Monitoring </span>= <span class="yellow">Awesomeness</span></h4></section>
+<section>
+  
+  <section>
+  <h2>Observability Practices</h2>
+  </section>
+<section>
+    <p>Knowing exactly where and how to start your o11y journey depends on the particulars of your team.</p>
+  </section>
+  <section>
+    <p>Focus on solving the biggest pain points rather than starting in places that already operate smoothly enough.</p>
+  </section>
+  <section>
+    <p>Throughout your implementation journey, </p>
+    <ul>
+      <li>remember to keep an inclination toward moving fast</li>
+      <li>demonstrating high value and ROI</li>
+      <li>tackling work effectively</li>
+  </section>
+  <section>
+    <p>Find opportunities to include as many parts of your organization as possible.</p>
+  </section>
+  <section>
+    <p>Plan for completing the work in one big final push to get your implementation project over the finish line.</p>
+  </section>
+  <section>
+    <p>Using o11y on a daily basis helps unlock other new ways of working by default.</p>
+  </section>
 
-    <script src="dist/reveal.js"></script>
-    <script src="plugin/notes/notes.js"></script>
-    <script src="plugin/markdown/markdown.js"></script>
-    <script src="plugin/highlight/highlight.js"></script>
-    <script>
-      // More info about initialization & config:
-      // - https://revealjs.com/initialization/
-      // - https://revealjs.com/config/
-      Reveal.initialize({
-	  hash: true,
+</section>
+<section>
+  <section><h2>Observability Driven Development (ODD)</h2></section>
+  <section>
+    <p>O11y is practice that fundamentally helps engineers improve how their software runs in production.</p>
+  </section>
+  
+  <section>
+    <p>It is not applicable only after software is released to production. O11y can, and should, be a part of the software development cycle itself.</p>
+  </section>
+  <section>
+    <p>O11y can help you write and ship better code even before it lands in source control - becuase it's part of the set of tools, processes and culture that allow engineers to find bugs in their code quickly.</p>
+  </section>
+  <section>
+    <p></p>
+  </section>
+  </section>
+<section>
+  <section>
+    
+    <h2>SLOs - Service Level Objectives</h2>
+  </section> 
+  <section>
+    <img alt="SRE book" src="/examples/assets/SRE-book.png"/>
+  </section>
+  
+</section>
+<section><h2>Sampling</h2></section>
+<section>
+  <section>
+    <h2>Business case for Observability</h2>
+  </section>
+  <section>
+    <p>The business case for observability is <span class="yellow">customer retention</span></p>
+  </section>
+  <section>
+    <p>The need for o11y is recognized within teams for a variety of reasons.</p>
+    <ul>
+      <li>Reactive Need => Critical outage</li>
+      <li>Proactive Need => Innovation</li>
+    </ul>
+  </section>
+  <section>
+    <p>Similar to security and testability, o11y must be approached as an ongoing practice.</p>
+    <p>Teams practicing o11y must make a habit of ensuring any changes to code are bundled with proper instrumentation, just as they are bundled with tests.</p>
+    <p>Code reviews should ensure the instrumentation for new code achieves proper o11y standards.</p>
+  </section>
+  <section>
+    <p>O11y requires ongoing care and maintenance</p>
+  </section>
+</section>
+<section>
+  
+  <section>
+    <h1>Observability Maturity Model</h1>
+  </section>
+  <section>
+    <p>The O11y Maturity Model provides a starting poing against which your organization can measure its desired
+      outcomes and create its own customized adoption path.</p>
+  </section>
+  <section>
+    <p>Key capabilities are measured along:</p>
+    <ul>
+      <li>How they respond to system failure with resilience?</li>
+      <li>How easily they can deliver high quality code?</li>
+      <li>How well they manage complexity and technical debt?</li>
+      <li>How predictable their software release cadence is?</li>
+      <li>How well they can understand user behavior?</li>
+    </ul>
+  </section>
+  <section>
+    <p>The O11y Maturity Model is a synthesis of qualitative trends noticed across organizations adoppting o11y paired with quantitative analysis.</p>
+  </section>
+  <section>
+    <p>The maturity model itself will evolve as o11y adoption continues to spread.</p>
+  </section>
+  <section>
+    <p>Similarly, o11y practices will also evolve and the path toward maturity will be unique to your particular organization.</p>
+  </section>
+  <section>
+    <p>Create our own pragmatic approach</p>
+  </section>
+</section>
+</div>
+</div>
 
-	  // Learn about plugins: https://revealjs.com/plugins/
-	  plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-      });
-    </script>
-  </body>
+<script src="dist/reveal.js"></script>
+<script src="plugin/notes/notes.js"></script>
+<script src="plugin/markdown/markdown.js"></script>
+<script src="plugin/highlight/highlight.js"></script>
+<script>
+  // More info about initialization & config:
+  // - https://revealjs.com/initialization/
+  // - https://revealjs.com/config/
+  Reveal.initialize({
+      hash: true,
+
+      // Learn about plugins: https://revealjs.com/plugins/
+      plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+  });
+</script>
+</body>
 </html>
